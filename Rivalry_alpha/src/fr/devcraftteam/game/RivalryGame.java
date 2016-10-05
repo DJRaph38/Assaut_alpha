@@ -20,6 +20,7 @@ public class RivalryGame {
 			Player pl = Bukkit.getPlayer(uuid);
 			pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 80, 1)); //Boost de vitesse pendant 4s
 			
+			
 			//KITS
 			
 			
