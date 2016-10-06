@@ -57,25 +57,36 @@ public class Players implements Player{
 	private int kills;
 	private int lvl;
 	
-	
+	//Constructeur
 	public Players(){
 		super();
 	}
 	
+	//KILLS
 	public int getKills(){
 		return kills;
-	}
-	
-	public int getLvl(){
-		return lvl;
 	}
 	
 	public void setKills(int kills){
 		this.kills = kills;
 	}
 	
+	public void addKills(int kills){
+		this.kills += kills;
+	}
+	
+	//LEVEL
+	public int getLvl(){
+		return lvl;
+	}
+	
 	public void setLvl(int lvl){
 		this.lvl = lvl;
+	}
+	
+	//BDD A connecter
+	public boolean isVip(){
+		return false;
 	}
 
 	/**

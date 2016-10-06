@@ -27,7 +27,11 @@ public class RivalryJoin implements Listener {
 			if(!Main.getInstance().playerInGame.contains(p.getUniqueId())){
 				Main.getInstance().playerInGame.add(p.getUniqueId()); //Joueur pas dans la liste, add him
 
-				if(Main.getInstance().playerInGame.size() == 1){
+				if(Main.getInstance().playerInGame.size() > 40){
+					p.kickPlayer(ChatColor.AQUA+"Il n'y as plus de place en jeu !");
+				}//Kick le joueur si la partie est pleine
+				
+				if(Main.getInstance().playerInGame.size() >= 1){
 					//Chrono start if player == 1
 					task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable(){
 						
