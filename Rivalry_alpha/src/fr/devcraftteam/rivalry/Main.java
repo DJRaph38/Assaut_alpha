@@ -12,21 +12,24 @@ public class Main extends JavaPlugin{
 
 	public static Main instance; //Instance du plugin
     public ArrayList<UUID> playerInGame = new ArrayList<>(); //liste des joueurs
+    public ArrayList<UUID> magentaTeam = new ArrayList<>(); //TEAM MAGENTA
+    public ArrayList<UUID> blueTeam = new ArrayList<>(); //TEAM BLEUE
    
     
     
     /**
-     * On Enable - Disable
+     * On Enable
      */
-    public void onEnable(){
-    	
+    public void onEnable(){    	
     	getLogger().info("on");
         instance = this;
         EventsManager.registerEvents(this); //Events
         RivalryState.setState(RivalryState.WAIT);//Jeu en mode attente
-        
-    }//Plugin s'allume
+    }
     
+    /**
+     * On Disable
+     */
     public void onDisable(){
     	getLogger().info("off");
     }

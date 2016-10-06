@@ -5,6 +5,7 @@ import org.bukkit.plugin.PluginManager;
 
 import fr.devcraftteam.rivalry.Main;
 import fr.devcraftteam.util.DropitemInHand;
+import fr.devcraftteam.util.OnWeatherChange;
 import fr.devcraftteam.util.RivalrySpeedRecipes;
 
 public class EventsManager {
@@ -12,10 +13,17 @@ public class EventsManager {
 	public static void registerEvents(Main pl) {
         PluginManager pm = Bukkit.getPluginManager();//register these events
         //EVENTS
+        
+        /**
+         * UTILS
+         */
+        pm.registerEvents(new OnWeatherChange(), pl); //Le temps ne change pas
+        
         /**
          * DEBUT DU JEU - WAITING ROOM
          */
         pm.registerEvents(new RivalryJoin(), pl); //Lorsqu'un joueur rejoins le serveur
+        pm.registerEvents(new TeamChoice(), pl); // Choix de team
         pm.registerEvents(new DropitemInHand(), pl);//Lorsqu'un joueur drop un item (juste pour la waiting room)
         
         /**
