@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import fr.devcraftteam.game.RivalryGame;
@@ -82,5 +83,23 @@ public class RivalryJoin implements Listener {
 	public void quit(PlayerQuitEvent e){
 		Player p = e.getPlayer(); //Player who left the game
 		Main.getInstance().playerInGame.remove(p.getUniqueId());//Not in PlayerInGame list
+		if(Main.getInstance().playerInGame.size() < 16){
+			for(UUID uuid : Main.getInstance().playerInGame){
+				Player pl = Bukkit.getPlayer(uuid);
+				pl.sendMessage(ChatColor.RED+"Timer arrêté, il faut minimum 16 joueurs pour jouer !");
+			}//Pour tous les joueurs
+		}
 	}//DEPART D'UN JOUEUR
+	
+	@EventHandler
+	public void quit(PlayerKickEvent e){
+		Player p = e.getPlayer(); //Player who left the game
+		Main.getInstance().playerInGame.remove(p.getUniqueId());//Not in PlayerInGame list
+		if(Main.getInstance().playerInGame.size() < 16){
+			for(UUID uuid : Main.getInstance().playerInGame){
+				Player pl = Bukkit.getPlayer(uuid);
+				pl.sendMessage(ChatColor.RED+"Timer arrêté, il faut minimum 16 joueurs pour jouer !");
+			}//Pour tous les joueurs
+		}
+	}//KICK D'UN JOUEUR
 }
