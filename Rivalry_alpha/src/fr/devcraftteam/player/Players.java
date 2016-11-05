@@ -56,10 +56,39 @@ public class Players implements Player{
 	
 	private int kills;
 	private int lvl;
+	private Eclaireur e;
+	private Guerrier g;
+	private Ingenieur i;
+	private Magicien m;
+	private String classe = "None";
 	
 	//Constructeur
 	public Players(){
 		super();
+	}
+	
+	//SETCLASS
+	public String getClasse(){
+		return classe;
+	}
+	
+	public void setClasse(String clas){
+		switch(clas){
+			case "Eclaireur" :
+				this.classe = "Eclaireur";
+				break;
+			case "Guerrier" :
+				this.classe = "Guerrier";
+				break;
+			case "Ingénieur" :
+				this.classe = "Ingénieur";
+				break;
+			case "Magicien" :
+				this.classe = "Magicien";
+				break;
+			default :
+				this.classe = "None";
+		}
 	}
 	
 	//KILLS

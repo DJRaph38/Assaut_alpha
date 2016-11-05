@@ -1,14 +1,25 @@
 package fr.devcraftteam.player;
 
-public class Guerrier extends Players{
+import org.bukkit.entity.Player;
+
+public class Guerrier{
 	
 	private int lvlGuerrier;
 	private float mana;
 	private float faim;
 	private float life;
+	private Player pl;
 	
-	public Guerrier(){
-		super();
+	public Guerrier(Player p){
+		this.pl = p;
+	}
+	
+	public Player getPlayer(){
+		return pl;
+	}
+	
+	public void setPlayer(Player p){
+		this.pl = p;
 	}
 	
 	public int getLvlG(){

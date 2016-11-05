@@ -1,14 +1,25 @@
 package fr.devcraftteam.player;
 
-public class Magicien extends Players{
+import org.bukkit.entity.Player;
+
+public class Magicien{
 
 	private int lvlMagicien;
 	private float mana;
 	private float faim;
 	private float life;
+	private Player pl;
 	
-	public Magicien(){
-		super();
+	public Magicien(Player p){
+		this.pl = p;
+	}
+	
+	public Player getPlayer(){
+		return pl;
+	}
+	
+	public void setPlayer(Player p){
+		this.pl = p;
 	}
 	
 	public int getLvlG(){

@@ -1,14 +1,25 @@
 package fr.devcraftteam.player;
 
-public class Ingenieur extends Players{
+import org.bukkit.entity.Player;
+
+public class Ingenieur{
 
 	private int lvlIngenieur;
 	private float mana;
 	private float faim;
 	private float life;
+	private Player pl;
 	
-	public Ingenieur(){
-		super();
+	public Ingenieur(Player p){
+		this.pl = p;
+	}
+	
+	public Player getPlayer(){
+		return pl;
+	}
+	
+	public void setPlayer(Player p){
+		this.pl = p;
 	}
 	
 	public int getLvlG(){

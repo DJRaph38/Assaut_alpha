@@ -28,6 +28,9 @@ public class RivalryGame {
 			RivalryTeleport.tpRandom(pl);
 			
 		}//Pour tous les joueurs
+		
+		//BOUCLE de 20mn
+		
 	}
 
 

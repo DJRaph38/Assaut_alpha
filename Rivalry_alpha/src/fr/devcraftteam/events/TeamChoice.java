@@ -9,8 +9,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.MaterialData;
-
 import fr.devcraftteam.rivalry.Main;
 
 public class TeamChoice implements Listener {

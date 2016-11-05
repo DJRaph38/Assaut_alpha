@@ -72,6 +72,7 @@ public class RivalryJoin implements Listener {
 				/**
 				 * Vérifie si le timer peut se lancer
 				 */
+				//MODIFIER AVEC LES EQUIPES + EQUILIBRAGE A FAIRE !
 				if(Main.getInstance().playerInGame.size() >= 1){
 					//Chrono start if player == 1
 					task = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable(){

@@ -1,14 +1,25 @@
 package fr.devcraftteam.player;
 
-public class Eclaireur extends Players{
+import org.bukkit.entity.Player;
+
+public class Eclaireur {
 
 	private int lvlEclaireur;
 	private float mana;
 	private float faim;
 	private float life;
+	private Player pl;
 	
-	public Eclaireur(){
-		super();
+	public Eclaireur(Player p){
+		this.pl = p;
+	}
+	
+	public Player getPlayer(){
+		return pl;
+	}
+	
+	public void setPlayer(Player p){
+		this.pl = p;
 	}
 	
 	public int getLvlG(){
